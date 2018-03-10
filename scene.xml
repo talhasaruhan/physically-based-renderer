@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<World>
+	<ambient>
+		<color r="0.2" g="0.2" b="0.2"/>	
+	</ambient>
+</World>
+
+<Camera>
+	<position x="0" y="0" z="0"/>
+	<rotation x="0" y="0" z="0"/>
+	<fov>60</fov>
+</Camera>
+
+<Materials>
+	<material name="diffuse" id="0">
+		<shader brdf="diffuse">
+			<color r=".4" g=".8" b=".6"/>
+		</shader>
+	</material>
+	<material name="refractive" id="1">
+		<shader brdf="Refractive" ior="1.5">
+		</shader>
+	</material>
+	<material name="emissive" id="2">
+		<shader brdf="emissive">
+			<color r="1.0" g="1.0" b="1.0"/>
+		</shader>
+	</material>
+	<material name="diffuse" id="3">
+		<shader brdf="diffuse">
+			<color r=".8" g=".4" b=".2"/>
+		</shader>
+	</material>
+	<material name="diffuse" id="4">
+		<shader brdf="diffuse">
+			<color r=".6" g=".8" b="1.0"/>
+		</shader>
+	</material>
+	<material name="glossy" id="5">
+		<shader brdf="GGX" roughness="0.2" ior="2.0">
+			<color r="1.0" g="1.0" b="1.0"/>
+		</shader>
+	</material>
+</Materials>
+
+<Lights>
+	<light id="0" type="area">
+		<a x="4" y="-12" z="30"/>	
+		<d x="4" y="-12" z="36"/>	
+		<c x="-10" y="-12" z="36"/>	
+		<b x="-10" y="-12" z="30"/>	
+		<color r="0.4" g="0.6" b="0.8"/>
+	</light>
+	<light id="1" type="area">
+		<a x="14" y="-10" z="24"/>	
+		<d x="14" y="10" z="24"/>	
+		<c x="14" y="10" z="46"/>	
+		<b x="14" y="-10" z="46"/>	
+		<color r="0.88" g="0.88" b="0.88"/>
+	</light>	
+	<light id="2" type="area">
+		<a x="10" y="-10" z="60"/>	
+		<d x="10" y="10" z="60"/>	
+		<c x="-10" y="10" z="60"/>	
+		<b x="-10" y="-10" z="60"/>	
+		<color r="0.88" g="0.88" b="0.88"/>
+	</light>	
+</Lights>
+
+<Objects>
+	<object name="sphere" id="0" directSample="1" directSampleLights="1">
+		<primitives>
+			<id>0</id>
+		</primitives>
+		<material id="5"/>
+	</object>
+<!-- 	<object name="sphere" id="5" directSampleLights="0">
+		<primitives>
+			<id>5</id>
+		</primitives>
+		<material id="1"/>
+	</object> -->
+	<object name="sphere" id="1" directSample="1" directSampleLights="1">
+		<primitives>
+			<id>1</id>
+		</primitives>
+		<material id="5"/>
+	</object>
+	<object name="sphere" id="2" directSample="1" directSampleLights="1">
+		<primitives>
+			<id>2</id>
+		</primitives>
+		<material id="0"/>
+	</object>
+	<object name="sphere" id="3" directSample="1" directSampleLights="1">
+		<primitives>
+			<id>3</id>
+		</primitives>
+		<material id="4"/>
+	</object>
+	<object name="sphere" id="4" directSample="1" directSampleLights="1">
+		<primitives>
+			<id>4</id>
+		</primitives>
+		<material id="4"/>
+	</object>
+<!-- 	<object name="lighy" id="5" directSampleLights="0">
+		<primitives>
+			<id>5</id>
+		</primitives>
+		<material id="2"/>
+	</object> -->
+</Objects>
+
+<Primitives>
+	<primitive name="sphere" id="0">
+		<mesh type="Sphere">
+			<radius>4</radius>
+			<position x="-1" y="0" z="20"/>		
+		</mesh>
+	</primitive>
+	<!-- <primitive name="glass" id="0">
+		<mesh type="Quad">
+			<a x="3" y="-4" z="18"/>	
+			<d x="3" y="2" z="18"/>	
+			<c x="-1" y="2" z="18"/>	
+			<b x="-1" y="-4" z="18"/>		
+		</mesh>
+	</primitive> -->
+<!-- 	<primitive name="glass" id="5">
+		<mesh type="Quad">
+			<a x="2" y="-2" z="20"/>	
+			<b x="2" y="2" z="20"/>	
+			<c x="-2" y="2" z="20"/>	
+			<d x="-2" y="-2" z="20"/>		
+		</mesh>
+	</primitive> -->
+	<primitive name="sphere" id="1">
+		<mesh type="Sphere">
+			<radius>4</radius>
+			<position x="6" y="4" z="40"/>		
+		</mesh>
+	</primitive>
+	<primitive name="sphere" id="2">
+		<mesh type="Sphere">
+			<radius>8</radius>
+			<position x="-6" y="6" z="38"/>		
+		</mesh>
+	</primitive>
+	<primitive name="sphere" id="3">
+		<mesh type="Sphere">
+			<radius>4</radius>
+			<position x="-6" y="-8" z="42"/>		
+		</mesh>
+	</primitive>
+	<primitive name="sphere" id="4">
+		<mesh type="Sphere">
+			<radius>1</radius>
+			<position x="3" y="-4" z="42"/>		
+		</mesh>
+	</primitive>
+<!-- 	<primitive name="lighy" id="5">
+		<mesh type="Quad">
+			<a x="14" y="-10" z="24"/>	
+			<b x="14" y="10" z="24"/>	
+			<c x="14" y="10" z="44"/>	
+			<d x="14" y="-10" z="46"/>		
+		</mesh>
+	</primitive> -->
+</Primitives>

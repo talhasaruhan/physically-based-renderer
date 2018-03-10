@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Canvas>
+	<width>1280</width>
+	<height>720</height>
+</Canvas>
+<Integrator>
+	<integrator>IS_PathTracer</integrator>
+	<NUM_THREADS>1</NUM_THREADS>
+	<n_indirect_samples>10</n_indirect_samples>
+	<n_primary_direct_samples>10</n_primary_direct_samples>
+	<n_secondary_direct_samples>10</n_secondary_direct_samples>
+	<tile_size>64</tile_size>
+	<min_depth>1</min_depth>
+	<max_depth>2</max_depth>
+	<msaa_level>0</msaa_level>
+</Integrator>
+<HaltConditions>
+	<halt>0</halt>
+	<time>10</time>
+	<incrementalSave>0</incrementalSave>
+</HaltConditions>
+<Output>
+	<file>testout.png</file>
+</Output>
